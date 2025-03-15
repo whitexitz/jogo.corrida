@@ -27,7 +27,11 @@ let pontuacao = 0;
 let nivel = 1;
 
 function desenharCarro(carro) {
-    ctx.drawImage(carro.imagem, carro.x, carro.y, carro.largura, carro.altura);
+    try {
+        ctx.drawImage(carro.imagem, carro.x, carro.y, carro.largura, carro.altura);
+    } catch (e) {
+        console.error('Erro ao desenhar carro:', e);
+    }
 }
 
 function desenharEstrada() {
